@@ -29,7 +29,6 @@ const (
 type model struct {
 	feedSlice         []gofeed.Feed
 	feedSliceIndex    int
-	feed              gofeed.Feed
 	feedIndex         int
 	ready             bool
 	viewport          viewport.Model
@@ -355,8 +354,7 @@ func main() {
 	viper.SetDefault("horzPadding", 2)
 	viper.SetDefault("vertPadding", 0)
 	viper.SetDefault("fetchTimeout", 15)
-	defaultFeedUrls := [1]string{"https://github.com/homielabs.atom"}
-	log.Println(defaultFeedUrls)
+	defaultFeedUrls := []string{"https://github.com/homielabs.atom"}
 	viper.SetDefault("feedUrls", defaultFeedUrls)
 
 	// config file locations
